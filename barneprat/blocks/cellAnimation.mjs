@@ -1,4 +1,4 @@
-import * as Utils from "../utils/_utils.mjs";
+import * as Utils from "../utils/utilsLib.mjs";
 import * as GlobalTimer from "../globalTimer.mjs"
 import BaseBlock from "./baseBlock.mjs";
 

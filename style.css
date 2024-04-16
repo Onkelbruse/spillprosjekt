@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Gluten:wght@100..900&display=swap');
+
+* {
+    font-family: "Gluten", cursive;
+    font-optical-sizing: auto;
+    font-size: 2em;
+    font-weight: 100;
+    font-style: normal;
+    font-variation-settings: "slnt" 0;
+}
+
+.overskrift {
+    color: rgb(123, 137, 133);
+}
+/* Stil for overskrifter med klassenavnet .overskrift */
+
+.overskrift {
+  font-family: 'Comic Sans MS', cursive; /* Velg en mer leken skrifttype */
+  font-size: 120px; /* Øk størrelsen på skriften */
+  font-weight: bold;
+  color: transparent; /* Gjør teksten gjennomsiktig */
+  background: linear-gradient(to right, #ff0000, #ff9900, #ffff00, #33cc33, #3399ff, #9966ff); /* Gradient fra rød til lilla */
+  -webkit-background-clip: text; /* Bruk teksten som en maske for bakgrunnsfargen */
+  background-clip: text;
+  padding: 50px; /* Legg til litt padding for luft rundt teksten */
+}
+
+.overskrift2 {
+    color: greenyellow;
+}
+
+/* colors.css */
+
+:root {
+    --black: #000000;
+    --white: #ffffff;
+  }
+
+  
+  .overskrift{
+    font-family: sans-serif;
+    font-size: 50px;
+    font-weight: bold;
+    text-shadow: #852020;
+  }
+
+  .startknapp{
+    font-family: sans-serif;
+    font-size: 50px;
+  }
+
+  .kortTittel{
+
+  }
+
+  .kortText {
+
+  }
+
+  /* Generelle stiler */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f0f0f0; /* En lys bakgrunnsfarge */
+}
+
+.container {
+  width: 80%; /* Juster bredden etter behov */
+  margin: 20px auto;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Stil for spørsmål med klassenavnet .kortTittel */
+.kortTittel {
+  font-size: 48px; /* Øk størrelsen for spørsmål */
+  font-weight: bold;
+  color: #fff; /* Lys tekstfarge for kontrast */
+  background-color: #007bff; /* Blå bakgrunnsfarge */
+  padding: 30px;
+  margin-bottom: 30px;
+  border-radius: 20px;
+}
+
+/* Stil for svaralternativer med klassenavnet .kortText */
+.kortText {
+  font-size: 36px; /* Øk størrelsen for svaralternativer */
+  color: #333; /* Mørk tekstfarge for kontrast */
+  background-color: #ffc107; /* Gul bakgrunnsfarge */
+  padding: 30px;
+  margin-bottom: 20px;
+  border-radius: 20px;
+  cursor: pointer; /* Vis at svarene er klikkbare */
+  transition: background-color 0.3s; /* Legg til en jevn overgang for bakgrunnsfargen */
+}
+
+.kortText:hover {
+  background-color: #ff69b4; /* Endre fargen til rosa når musepekeren svever over svaret */
+}

@@ -32,43 +32,44 @@ function nesteSide(enKnapp, enSide) {
 
 function forside() {
     const bakgrunn = new Blocks.Image("bilder/bakgrunnsbilde.jpg", { x: 0, y: 0, width: 1180, height: 820 });
+    const velkommenBilde = new Blocks.Image("bilder/hjelpBonden.png", { x: 0, y: 0, width: 600, height: 350});
     const velkommenLyd = new Blocks.Sound("lyder/intro.mp3", { loop: false, auto: false });
+    const bonden = new Blocks.Image("bilder/synneSol.png", {x: 900, y: 50, width: 200, height: 280})
+    const introduksjon = new Blocks.Sound("lyder/introduksjon.mp3", { loop: false, auto: false})
+   
+    Actions.Click(bonden, () => {
+        introduksjon.start();
+    })
+    const naarBakgrunnTrykkes = () => {
+        const knapp = new Blocks.Image("bilder/trykkHer.png", { x: 760, y: 450, width: 400, height: 200 });
+        Actions.Click(knapp, () => {
+            velkommenLyd.stop();
+            introduksjon.stop();
+            GaaTil(skjerm2);
+
+
+        })};
+
 
     // Starter lyden når brukeren klikker på bakgrunnsbildet
     Actions.Click(bakgrunn, () => {
         velkommenLyd.start();
-        setTimeout(visKnapp, 0, 1); // Vis knappen etter 4 sekunder når musikken starter
+        setTimeout(naarBakgrunnTrykkes, 0, 4000); // Vis knappen etter 4 sekunder når musikken starter
     });
 
-    // Viser velkomstteksten hele tiden
-    const velkommen = new Blocks.Text("Hjelp Bonden!", {
-        style: "overskrift",
-        x: 400,
-        y: 150,
-        width: "100%",
-        height: 20
-    });
-
-    function visKnapp() {
-        const knapp = new Blocks.Text("Trykk her for å starte spillet", { style: "startknapp", x: 330, y: 500, width: "100%", height: 50 });
-
-        Actions.Click(knapp, () => {
-            GaaTil(skjerm2);
-        })
-
-    }
 }
 
 function skjerm2() {
 
     const bakgrunnsbilde = new Blocks.Image("bilder/bakgrunnsbilde.jpg", { x: 0, y: 0, width: 1180, height: 820 });
+    const info = new Blocks.Image("bilder/velgEtBilde.png", { x: 10, y:0, width: 1150, heigth: 50})
     const ku = new Blocks.Image("bilder/ku.png", { x: 150, y: 150, width: 250, height: 250 });
     const sau = new Blocks.Image("bilder/sau.png", { x: 450, y: 150, width: 250, height: 250 });
     const høne = new Blocks.Image("bilder/hone.png", { x: 450, y: 400, width: 250, height: 250 });
     const leiseg = new Blocks.Image("bilder/leiseg.png", { x: 800, y: 150, width: 250, height: 250 });
     const smil = new Blocks.Image("bilder/smil.png", { x: 150, y: 400, width: 250, height: 250 });
     const gris = new Blocks.Image("bilder/gris.png", { x: 800, y: 400, width: 250, height: 250 });
-
+    
     nesteSide(ku, tilfeldigSpm);
     nesteSide(sau, tilfeldigSpm);
     nesteSide(gris, tilfeldigSpm);
@@ -113,6 +114,8 @@ function riktigSide() {
 
     const bakgrunn = new Blocks.Image("bilder/riktigbilde.jpg", { x: 0, y: 0, width: 1180, height: 820 });
     const tittel = new Blocks.Text("Riktig!", { style: "overskrift", x: 500, y: 100, width: "100%", height: 20 });
+    const riktigLyd = new Blocks.Sound("lyder/woho.mp3", { loop: false, auto: false });
+    riktigLyd.start();
     nesteSide(bakgrunn, skjerm2)
 
 
@@ -121,6 +124,8 @@ function riktigSide() {
 function feilside() {
     const bakgrunn = new Blocks.Image("bilder/feil.jpeg", { x: 0, y: 0, width: 1180, height: 820 });
     const tittel = new Blocks.Text("Feil", { style: "overskrift", x: 600, y: 350, width: "100%", height: 20 });
+    const feilLyd = new Blocks.Sound("lyder/aaneii.mp3", { loop: false, auto: false });
+    feilLyd.start();
     nesteSide(bakgrunn, skjerm2)
 
 
@@ -134,6 +139,8 @@ function visSpørsmål(aTitle, alt1, alt2, alt3, correctnumber) {
     const alternativ3 = new Blocks.Text(alt3, { style: "kortText", x: 50, y: 550, width: "100%", height: 20 });
 
     const allOptions = [alternativ1, alternativ2, alternativ3];
+
+    
 
     for (let i = 0; i < allOptions.length; i++) {
         Actions.Click(allOptions[i], () => {
@@ -310,7 +317,7 @@ function spm23() {
 function spm24() {
     const background = new Blocks.Image("bilder/bakgrunnsbilde.jpg", { x: 0, y: 0, width: 1180, height: 820 });
 
-    visSpørsmål("Hvor på kua er juret?", "Under", "Over", "På siden", 1);
+    visSpørsmål("Hvor på kua er juret?", "Under", "Over", "På siden", 3);
 
 }
 

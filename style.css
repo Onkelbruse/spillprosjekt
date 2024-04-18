@@ -11,19 +11,38 @@
 
 .overskrift {
     color: rgb(123, 137, 133);
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #f0f0f0;
+  }
+  
+  .overskrift {
+      font-size: 4em;
+      background: linear-gradient(to right, #ff5733, #34eb6c);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent; /* Endre gjennomsiktig farge til gjennomsiktig */
+      animation: gradient 5s linear infinite alternate-reverse;
+  }
+  
+  @keyframes gradient {
+      0% {
+          background-position: 0%;
+      }
+      100% {
+          background-position: 100%;
+      }
+  }
+  
 }
-/* Stil for overskrifter med klassenavnet .overskrift */
 
-.overskrift {
-  font-family: 'Comic Sans MS', cursive; /* Velg en mer leken skrifttype */
-  font-size: 120px; /* Øk størrelsen på skriften */
-  font-weight: bold;
-  color: transparent; /* Gjør teksten gjennomsiktig */
-  background: linear-gradient(to right, #ff0000, #ff9900, #ffff00, #33cc33, #3399ff, #9966ff); /* Gradient fra rød til lilla */
-  -webkit-background-clip: text; /* Bruk teksten som en maske for bakgrunnsfargen */
-  background-clip: text;
-  padding: 50px; /* Legg til litt padding for luft rundt teksten */
-}
+
 
 .overskrift2 {
     color: greenyellow;
